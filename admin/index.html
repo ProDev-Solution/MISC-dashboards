@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Datepicker CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Datepicker JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Local Sytles -->
+    <link rel="stylesheet" href="../assets/styles/base.css">
+    <link rel="stylesheet" href="../assets/styles/dashboard.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans+Lao:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/logos/logo2.png" alt="" width="140" height="55">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <div class="dropdown">
+                        <button class="btn bg-gray" type="button" id="notificationsDropDown" data-bs-toggle="dropdown"
+                            data-bs-auto-close="true" aria-expanded="false">
+                            <i class="bi bi-bell"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="notificationsDropDown">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </div>
+                    <img src="../assets/images/user.png" alt="user pic" width="45px" height="auto">
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar - col-md-2 for medium screens and up, full width on smaller screens -->
+            <aside class="col-md-2 d-flex flex-column justify-content-between p-2 bg-white">
+                <ul class="nav-links flex-column nav position-relative ">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex align-items-center gap-3">
+                            <div class="box-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.66667 2H2V6.66667H6.66667V2Z" fill="#347FC2" fill-opacity="0.98"
+                                        stroke="#347FC2" stroke-opacity="0.98" stroke-width="1.59942"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M14.0002 2H9.3335V6.66667H14.0002V2Z" stroke="#347FC2"
+                                        stroke-opacity="0.98" stroke-width="1.59942" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.0002 9.33398H9.3335V14.0007H14.0002V9.33398Z" fill="#347FC2"
+                                        fill-opacity="0.98" stroke="#347FC2" stroke-opacity="0.98"
+                                        stroke-width="1.59942" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.66667 9.33398H2V14.0007H6.66667V9.33398Z" stroke="#347FC2"
+                                        stroke-opacity="0.98" stroke-width="1.59942" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex align-items-center gap-3">
+                            <div class="box-icon">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5 1.25C5.16576 1.25 5.32473 1.31585 5.44194 1.43306C5.55915 1.55027 5.625 1.70924 5.625 1.875V2.5H9.375V1.875C9.375 1.70924 9.44085 1.55027 9.55806 1.43306C9.67527 1.31585 9.83424 1.25 10 1.25C10.1658 1.25 10.3247 1.31585 10.4419 1.43306C10.5592 1.55027 10.625 1.70924 10.625 1.875V2.5H11.25C11.7473 2.5 12.2242 2.69754 12.5758 3.04917C12.9275 3.40081 13.125 3.87772 13.125 4.375V5H1.875V4.375C1.875 3.87772 2.07254 3.40081 2.42417 3.04917C2.77581 2.69754 3.25272 2.5 3.75 2.5H4.375V1.875C4.375 1.70924 4.44085 1.55027 4.55806 1.43306C4.67527 1.31585 4.83424 1.25 5 1.25ZM1.875 6.25V11.875C1.875 12.3723 2.07254 12.8492 2.42417 13.2008C2.77581 13.5525 3.25272 13.75 3.75 13.75H11.25C11.7473 13.75 12.2242 13.5525 12.5758 13.2008C12.9275 12.8492 13.125 12.3723 13.125 11.875V6.25H1.875Z"
+                                        fill="#347FC2" fill-opacity="0.98" />
+                                </svg>
+                            </div>
+                            Schedule
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex align-items-center gap-3">
+                            <div class="box-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-people-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                                </svg>
+                            </div>
+                            Patients
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex align-items-center gap-3">
+                            <div class="box-icon">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex align-items-center gap-3">
+                            <div class="box-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_681_14049)">
+                                        <path
+                                            d="M3.54669 15.0312H2.60919C2.42271 15.0312 2.24387 14.9572 2.11201 14.8253C1.98015 14.6934 1.90607 14.5146 1.90607 14.3281V10.1094C1.90607 9.92289 1.98015 9.74405 2.11201 9.61219C2.24387 9.48033 2.42271 9.40625 2.60919 9.40625H3.54669C3.73317 9.40625 3.91201 9.48033 4.04388 9.61219C4.17574 9.74405 4.24982 9.92289 4.24982 10.1094V14.3281C4.24982 14.5146 4.17574 14.6934 4.04388 14.8253C3.91201 14.9572 3.73317 15.0312 3.54669 15.0312V15.0312Z"
+                                            fill="#347FC2" fill-opacity="0.98" />
+                                        <path
+                                            d="M10.1092 15.0312H9.17172C8.98524 15.0312 8.8064 14.9572 8.67454 14.8253C8.54268 14.6934 8.4686 14.5146 8.4686 14.3281V7.29687C8.4686 7.11039 8.54268 6.93155 8.67454 6.79969C8.8064 6.66783 8.98524 6.59375 9.17172 6.59375H10.1092C10.2957 6.59375 10.4745 6.66783 10.6064 6.79969C10.7383 6.93155 10.8123 7.11039 10.8123 7.29687V14.3281C10.8123 14.5146 10.7383 14.6934 10.6064 14.8253C10.4745 14.9572 10.2957 15.0312 10.1092 15.0312V15.0312Z"
+                                            fill="#347FC2" fill-opacity="0.98" />
+                                        <path
+                                            d="M13.3904 15.0312H12.4529C12.2665 15.0312 12.0876 14.9572 11.9558 14.8253C11.8239 14.6934 11.7498 14.5146 11.7498 14.3281V4.01562C11.7498 3.82914 11.8239 3.6503 11.9558 3.51844C12.0876 3.38658 12.2665 3.3125 12.4529 3.3125H13.3904C13.5769 3.3125 13.7558 3.38658 13.8876 3.51844C14.0195 3.6503 14.0936 3.82914 14.0936 4.01562V14.3281C14.0936 14.5146 14.0195 14.6934 13.8876 14.8253C13.7558 14.9572 13.5769 15.0312 13.3904 15.0312V15.0312Z"
+                                            fill="#347FC2" fill-opacity="0.98" />
+                                        <path
+                                            d="M6.82796 15.0312H5.89046C5.70398 15.0312 5.52513 14.9572 5.39327 14.8253C5.26141 14.6934 5.18733 14.5146 5.18733 14.3281V1.67187C5.18733 1.48539 5.26141 1.30655 5.39327 1.17469C5.52513 1.04283 5.70398 0.96875 5.89046 0.96875H6.82796C7.01444 0.96875 7.19328 1.04283 7.32514 1.17469C7.457 1.30655 7.53108 1.48539 7.53108 1.67187V14.3281C7.53108 14.5146 7.457 14.6934 7.32514 14.8253C7.19328 14.9572 7.01444 15.0312 6.82796 15.0312V15.0312Z"
+                                            fill="#347FC2" fill-opacity="0.98" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_681_14049">
+                                            <rect width="15" height="15" fill="white"
+                                                transform="translate(0.499847 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            Reviews & Rating
+                        </a>
+                    </li>
+                </ul>
+                <!-- Doc -->
+                <div class="px-4">
+                    <div class="d-flex flex-column gap-3 bg-primary bg-circle-pattern px-2 py-3 text-white rounded-4">
+                        <div class="bg-white p-1 pt-0 rounded-2" style="width: fit-content;">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 0.5C4.03125 0.5 0 4.53125 0 9.5C0 14.4687 4.03125 18.5 9 18.5C13.9687 18.5 18 14.4687 18 9.5C18 4.53125 13.9687 0.5 9 0.5ZM8.71875 14.75C8.53333 14.75 8.35207 14.695 8.1979 14.592C8.04373 14.489 7.92357 14.3426 7.85261 14.1713C7.78165 14 7.76309 13.8115 7.79926 13.6296C7.83544 13.4477 7.92472 13.2807 8.05584 13.1496C8.18695 13.0185 8.35399 12.9292 8.53585 12.893C8.71771 12.8568 8.90621 12.8754 9.07751 12.9464C9.24882 13.0173 9.39524 13.1375 9.49825 13.2916C9.60126 13.4458 9.65625 13.6271 9.65625 13.8125C9.65625 14.0611 9.55748 14.2996 9.38166 14.4754C9.20585 14.6512 8.96739 14.75 8.71875 14.75V14.75ZM10.2862 9.96875C9.5264 10.4787 9.42187 10.9461 9.42187 11.375C9.42187 11.549 9.35273 11.716 9.22966 11.839C9.10659 11.9621 8.93967 12.0312 8.76562 12.0312C8.59157 12.0312 8.42466 11.9621 8.30158 11.839C8.17851 11.716 8.10937 11.549 8.10937 11.375C8.10937 10.348 8.58187 9.5314 9.55406 8.87844C10.4578 8.27187 10.9687 7.8875 10.9687 7.04234C10.9687 6.46766 10.6406 6.03125 9.9614 5.70828C9.80156 5.63234 9.44578 5.55828 9.00797 5.56344C8.45859 5.57047 8.03203 5.70172 7.70344 5.96609C7.08375 6.46484 7.03125 7.00765 7.03125 7.01562C7.02709 7.1018 7.006 7.18632 6.96919 7.26435C6.93237 7.34238 6.88054 7.41239 6.81666 7.4704C6.75279 7.5284 6.67811 7.57325 6.5969 7.60239C6.51569 7.63153 6.42954 7.64439 6.34336 7.64023C6.25718 7.63608 6.17266 7.61499 6.09463 7.57817C6.0166 7.54135 5.94659 7.48952 5.88859 7.42565C5.83059 7.36177 5.78574 7.2871 5.75659 7.20589C5.72745 7.12468 5.71459 7.03852 5.71875 6.95234C5.7239 6.83844 5.80312 5.81234 6.87984 4.94609C7.43812 4.49703 8.14828 4.26359 8.98922 4.25328C9.58453 4.24625 10.1437 4.34703 10.523 4.52609C11.6578 5.06281 12.2812 5.95766 12.2812 7.04234C12.2812 8.62812 11.2214 9.34015 10.2862 9.96875Z"
+                                    fill="#347FC2" fill-opacity="0.98" />
+                            </svg>
+                        </div>
+                        <div class="d-flex flex-column ">
+                            <span>Need help?</span>
+                            <span class="text-4 text-white">Please check our docs</span>
+                        </div>
+                        <button class="btn bg-white">Documentation</button>
+                    </div>
+                </div>
+
+
+            </aside>
+
+            <!-- Main content - col-md-10 for medium screens and up, full width on smaller screens -->
+            <main class="col-md-10 p-4 pb-0" style="font-family: Poppins, sans-serif;">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="grid-3 mb-5">
+                            <div class="card border-0 rounded-3">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.49999 8.33334C9.34094 8.33334 10.8333 6.84095 10.8333 5C10.8333 3.15906 9.34094 1.66667 7.49999 1.66667C5.65904 1.66667 4.16666 3.15906 4.16666 5C4.16666 6.84095 5.65904 8.33334 7.49999 8.33334Z"
+                                                stroke="#2F70F2" stroke-width="1.5" />
+                                            <path
+                                                d="M12.5 7.5C13.163 7.5 13.7989 7.23661 14.2678 6.76777C14.7366 6.29893 15 5.66304 15 5C15 4.33696 14.7366 3.70107 14.2678 3.23223C13.7989 2.76339 13.163 2.5 12.5 2.5"
+                                                stroke="#2F70F2" stroke-width="1.5" stroke-linecap="round" />
+                                            <path
+                                                d="M7.49999 17.5C10.7217 17.5 13.3333 16.0076 13.3333 14.1667C13.3333 12.3257 10.7217 10.8333 7.49999 10.8333C4.27833 10.8333 1.66666 12.3257 1.66666 14.1667C1.66666 16.0076 4.27833 17.5 7.49999 17.5Z"
+                                                stroke="#2F70F2" stroke-width="1.5" />
+                                            <path
+                                                d="M15 11.6667C16.4617 11.9875 17.5 12.7992 17.5 13.75C17.5 14.6083 16.655 15.3525 15.4167 15.725"
+                                                stroke="#2F70F2" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                        <span class="fw-semibold" style="color:#2F70F2">Active Users</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-4 text-dark fw-semibold">14,7K</span>
+                                        <div class="text-success-light">
+                                            <i class="bi bi-caret-up-fill"></i>
+                                            <span class="">20%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 rounded-3">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.50002 8.33334C9.34097 8.33334 10.8334 6.84095 10.8334 5C10.8334 3.15906 9.34097 1.66667 7.50002 1.66667C5.65907 1.66667 4.16669 3.15906 4.16669 5C4.16669 6.84095 5.65907 8.33334 7.50002 8.33334Z"
+                                                stroke="#FFBC02" stroke-width="1.5" />
+                                            <path
+                                                d="M12.5 7.5C13.163 7.5 13.7989 7.23661 14.2678 6.76777C14.7366 6.29893 15 5.66304 15 5C15 4.33696 14.7366 3.70107 14.2678 3.23223C13.7989 2.76339 13.163 2.5 12.5 2.5"
+                                                stroke="#FFBC02" stroke-width="1.5" stroke-linecap="round" />
+                                            <path
+                                                d="M7.50002 17.5C10.7217 17.5 13.3334 16.0076 13.3334 14.1667C13.3334 12.3257 10.7217 10.8333 7.50002 10.8333C4.27836 10.8333 1.66669 12.3257 1.66669 14.1667C1.66669 16.0076 4.27836 17.5 7.50002 17.5Z"
+                                                stroke="#FFBC02" stroke-width="1.5" />
+                                            <path
+                                                d="M15 11.6667C16.4617 11.9875 17.5 12.7992 17.5 13.75C17.5 14.6083 16.655 15.3525 15.4167 15.725"
+                                                stroke="#FFBC02" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+
+                                        <span class="fw-semibold" style="color:#FFBC02">New Sign-ups</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-4 text-dark fw-semibold">341</span>
+                                        <div class="text-success-light">
+                                            <i class="bi bi-caret-up-fill"></i>
+                                            <span class="">20%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card border-0 rounded-3">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M18.3334 7.16666C18.325 4.57166 18.2434 3.19583 17.3567 2.30999C16.3809 1.33333 14.8092 1.33333 11.6667 1.33333H8.33335C5.19085 1.33333 3.61919 1.33333 2.64335 2.30999C1.66669 3.28583 1.66669 4.85749 1.66669 7.99999C1.66669 11.1425 1.66669 12.7142 2.64335 13.69C3.61919 14.6667 5.19085 14.6667 8.33335 14.6667H9.58335"
+                                                stroke="#876AFE" stroke-width="1.5" stroke-linecap="round" />
+                                            <path
+                                                d="M12.9167 9.66666V14.6667M12.9167 14.6667L14.5833 13M12.9167 14.6667L11.25 13M16.6667 14.6667V9.66666M16.6667 9.66666L18.3333 11.3333M16.6667 9.66666L15 11.3333"
+                                                stroke="#876AFE" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M8.33335 11.3333H5.00002M1.66669 6.33333H18.3334" stroke="#876AFE"
+                                                stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+
+
+                                        <span class="fw-semibold" style="color:#876AFE">Transactions</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-4 text-dark fw-semibold">$1,021,11</span>
+                                        <div class="text-danger">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                            <span class="">20%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card border-0 mb-5">
+                            <div class="card-header bg-white p-4">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.99999 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 9.99999C18.3333 5.39762 14.6024 1.66666 9.99999 1.66666C5.39762 1.66666 1.66666 5.39762 1.66666 9.99999C1.66666 14.6024 5.39762 18.3333 9.99999 18.3333Z"
+                                        stroke="#121212" stroke-width="1.5" />
+                                    <path
+                                        d="M14.1666 8.33331H5.83331L8.69831 5.83331M5.83331 11.6666H14.1666L11.3016 14.1666"
+                                        stroke="#121212" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="fw-semibold">Messages & Alerts</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column gap-3 px-3 py-2">
+                                    <div class="d-flex gap-3 border-bottom pb-1">
+                                        <svg width="42" height="33" viewBox="0 0 42 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 22.5C5.23946 22.1576 7.45498 19.8366 8.30374 18.2345C8.4895 17.8839 8.21436 17.5 7.81756 17.5C4.57832 17.5 1.95239 14.8741 1.95239 11.6348V9.25C1.95239 4.69365 5.64604 1 10.2024 1H16.9645C22.3493 1 26.7145 5.36522 26.7145 10.75C26.7145 16.1348 22.3493 20.5 16.9645 20.5H11.0001C7.19054 22.9 2.74605 22.8333 1 22.5Z"
+                                                stroke="#5C9F9B" stroke-width="2" />
+                                            <path
+                                                d="M41 31C36.7605 30.6576 34.545 28.3366 33.6963 26.7345C33.5105 26.3839 33.7856 26 34.1824 26C37.4217 26 40.0476 23.3741 40.0476 20.1348V17.75C40.0476 13.1937 36.354 9.5 31.7976 9.5H25.0355C19.6507 9.5 15.2855 13.8652 15.2855 19.25C15.2855 24.6348 19.6507 29 25.0355 29H30.9999C34.8095 31.4 39.254 31.3333 41 31Z"
+                                                stroke="#5C9F9B" stroke-width="2" />
+                                        </svg>
+                                        <span>You have 28 appointment requests. Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit. Aenean commodo feugiat sodales.</span>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <svg width="42" height="33" viewBox="0 0 42 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 22.5C5.23946 22.1576 7.45498 19.8366 8.30374 18.2345C8.4895 17.8839 8.21436 17.5 7.81756 17.5C4.57832 17.5 1.95239 14.8741 1.95239 11.6348V9.25C1.95239 4.69365 5.64604 1 10.2024 1H16.9645C22.3493 1 26.7145 5.36522 26.7145 10.75C26.7145 16.1348 22.3493 20.5 16.9645 20.5H11.0001C7.19054 22.9 2.74605 22.8333 1 22.5Z"
+                                                stroke="#5C9F9B" stroke-width="2" />
+                                            <path
+                                                d="M41 31C36.7605 30.6576 34.545 28.3366 33.6963 26.7345C33.5105 26.3839 33.7856 26 34.1824 26C37.4217 26 40.0476 23.3741 40.0476 20.1348V17.75C40.0476 13.1937 36.354 9.5 31.7976 9.5H25.0355C19.6507 9.5 15.2855 13.8652 15.2855 19.25C15.2855 24.6348 19.6507 29 25.0355 29H30.9999C34.8095 31.4 39.254 31.3333 41 31Z"
+                                                stroke="#5C9F9B" stroke-width="2" />
+                                        </svg>
+                                        <span>You have 28 appointment requests. Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit. Aenean commodo feugiat sodales.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col px-4">
+                        <div class="card border-0">
+                            <div class="card-header bg-white p-4">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.99999 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 9.99999C18.3333 5.39762 14.6024 1.66666 9.99999 1.66666C5.39762 1.66666 1.66666 5.39762 1.66666 9.99999C1.66666 14.6024 5.39762 18.3333 9.99999 18.3333Z"
+                                        stroke="#121212" stroke-width="1.5" />
+                                    <path
+                                        d="M14.1666 8.33331H5.83331L8.69831 5.83331M5.83331 11.6666H14.1666L11.3016 14.1666"
+                                        stroke="#121212" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span class="fw-semibold">Pending Approvals</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column gap-3 px-3 py-2">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../assets/images/doctor.png" alt="" width="35px" height="35px"
+                                                class="border rounded-circle">
+                                            <div class="d-flex flex-column gap-1">
+                                                <span>George Hill</span>
+                                                <span class="timing">June 19 2025 at 16.42</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-purple text-white rounded-4 btn-sm">Approve</button>
+                                            <button class="btn btn-danger rounded-4 btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../assets/images/doctor.png" alt="" width="35px" height="35px"
+                                                class="border rounded-circle">
+                                            <div class="d-flex flex-column gap-1">
+                                                <span>George Hill</span>
+                                                <span class="timing">June 19 2025 at 16.42</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-purple text-white rounded-4 btn-sm">Approve</button>
+                                            <button class="btn btn-danger rounded-4 btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../assets/images/doctor.png" alt="" width="35px" height="35px"
+                                                class="border rounded-circle">
+                                            <div class="d-flex flex-column gap-1">
+                                                <span>George Hill</span>
+                                                <span class="timing">June 19 2025 at 16.42</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-purple text-white rounded-4 btn-sm">Approve</button>
+                                            <button class="btn btn-danger rounded-4 btn-sm">Cancel</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pe-4">
+                        <nav class="mb-4 mx-1">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-trans-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-trans" type="button" role="tab" aria-controls="nav-trans"
+                                    aria-selected="true">All Transactions</button>
+                                <button class="nav-link" id="nav-pendPayment-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-pendPayment" type="button" role="tab"
+                                    aria-controls="nav-pendPayment" aria-selected="false">Pending Payments</button>
+                            </div>
+                        </nav>
+
+
+                        <div class="card border-0 p-4 rounded-4">
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-trans" role="tabpanel"
+                                    aria-labelledby="nav-trans-tab">
+                                    <table class="table table-borderless transaction-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Transaction ID</th>
+                                                <th scope="col">Card</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Receipt</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="nav-pendPayment" role="tabpanel"
+                                    aria-labelledby="nav-pendPayment-tab">
+                                    <table class="table table-borderless transaction-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Transaction ID</th>
+                                                <th scope="col">Card</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Receipt</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment from Andrew</td>
+                                                <td>#12548796</td>
+                                                <td>1234 ****</td>
+                                                <td>28 Jan, 12.30 AM</td>
+                                                <td>$2,500</td>
+                                                <td><button class="btn btn-sm rounded-pill"
+                                                        style="color: #123288;border: 1px solid #123288;">Download</button>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

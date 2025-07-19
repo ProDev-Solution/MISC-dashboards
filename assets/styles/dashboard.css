@@ -693,134 +693,58 @@ select {
     width: 20%;
     height: 5px;
 }
+
 .tf-dialog .progress-bar {
     background-color: var(--bs-primary);
 }
 
-.tf-dialog .modal-header{
+.tf-dialog .modal-header {
     justify-content: center;
 }
 
-/* .tf-dialog {
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.59);
-    backdrop-filter: blur(50.4486px);
-    -webkit-backdrop-filter: blur(50.4486px);
 
-    .dialog-head {
-        font-weight: 400;
-        font-size: 27.15px;
-        line-height: 50.15px;
-        letter-spacing: 0%;
-    }
+.transaction-table thead tr th {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #718EBF;
+    border-bottom: 1px solid #E6EFF5;
+}
 
-    .current-step {
-        background-color: var(--bs-primary);
-        color: #fff;
-        text-align: center;
-    }
+.transaction-table tbody tr td {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #232323;
+    vertical-align: middle;
+}
 
-    .next-step {
-        background-color: #fff;
-        color: rgb(151, 151, 151);
-        text-align: center;
-    }
+/* faqAccordion */
+#faqAccordion .accordion-body {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
 
-    fieldset {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem 0;
+#faqAccordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z'/%3E%3Cpath d='M5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5A.5.5 0 0 1 5 8z'/%3E%3C/svg%3E");
+}
 
-        label {
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 185%;
-            letter-spacing: 0%;
-            color: #404D61;
+#faqAccordion .accordion-button:is(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z'/%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z'/%3E%3C/svg%3E");
+}
 
-            &.hidden {
-                visibility: hidden;
-            }
+#faqAccordion .accordion-item {
+    border: 0 !important;
+    border-radius: 10px !important;
+    margin: 1rem 0;
+    overflow: hidden;
+}
 
-        }
-
-        input,
-        select {
-            box-sizing: border-box;
-            width: 229px;
-            height: 36px;
-            background: #FFFFFF;
-            border: 1.09px solid #E1E3E6;
-            color: #757D8A;
-            border-radius: 7px;
-            padding-left: 12px;
-        }
-
-        input {
-            &.w-auto {
-                width: auto;
-            }
-        }
-    }
-
-    .tf-header {
-        font-weight: 700 !important;
-        font-size: 2rem;
-        line-height: 121%;
-        letter-spacing: 0%;
-    }
-
-    .chakra-rating-group__item {
-        width: 54px;
-        height: 54px;
-
-        span {
-            width: 100%;
-            height: 100%;
-        }
-
-    }
-
-    .pay-method-radio {
-        label {
-            color: #0000004D;
-        }
-
-        label[data-state='checked'] {
-            color: #0A0D13;
-        }
-
-    }
-
-    &.payment {
-        input {
-            // padding: 12px 0px 12px 16px;
-            min-width: 100%;
-            height: 46px;
-            border: 1.5px solid rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            background-color: transparent;
-
-        }
-
-        select {
-            padding: 11px 16px;
-            height: 46px;
-            width: 100%;
-            border: 1.5px solid rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            background-color: transparent;
-        }
-
-        label {
-            font-weight: 500;
-            font-size: 1.125em;
-            line-height: 45px;
-            color: #0A0D13;
-        }
-
-        .chakra-pin-input__control {
-            width: 20%;
-        }
-    }
-} */
+#faqAccordion .accordion-button:not(.collapsed) {
+    background-color: var(--bs-primary);
+    color: #fff;
+}

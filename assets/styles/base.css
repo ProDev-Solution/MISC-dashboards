@@ -3,6 +3,7 @@
     --bs-secondary: #b9cada;
     /* --bs-success: #28a745; */
     --bs-success: #31A91D;
+    --bs-success-light: #4EEA7A;
     --bs-danger: #dc3545;
     --bs-info: #17a2b8;
     --bs-warning: #ffc107;
@@ -87,6 +88,9 @@ body {
 }
 .text-success{
     color: var(--bs-success) !important;
+}
+.text-success-light{
+    color: var(--bs-success-light) !important;
 }
 
 .text-head {
@@ -221,4 +225,10 @@ body {
     display: grid;
         grid-template-columns: repeat(3,1fr);
     gap: 1.5rem;
+}
+
+.bg-circle-pattern {
+background-image: url("data:image/svg+xml,%3Csvg width='176' height='170' viewBox='0 0 176 170' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='178.25' cy='169.25' r='177.25' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='153.219' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='125.872' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='98.5262' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='72.0087' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='47.9773' stroke='white'/%3E%3Ccircle cx='178.25' cy='169.25' r='28.75' stroke='white'/%3E%3C/g%3E%3C/svg%3E");  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
 }
